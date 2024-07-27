@@ -1,0 +1,23 @@
+// Importando as cores e fonts
+@import './cores/cores.scss';
+@import './fonts/fonts.scss';
+
+// Globais
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    // Importando o Main e Footer
+    @import './main/main.scss';
+    @import './footer/footer.scss';
+
+
+}
+

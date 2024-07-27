@@ -1,0 +1,17 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em ;
+    background-color: $branco-cor;
+    text-align: center;
+
+    p{
+        color: $primaria-enegrecido-muito-escuro-cor;
+        font-family: $font-family;
+        font-weight: $weight-500;
+        strong{
+            color: $primaria-violeta-moderado-cor;
+        }
+    }
+}
