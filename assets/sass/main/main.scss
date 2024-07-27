@@ -1,0 +1,198 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $neutra-azul-acinzentado-claro-cor;
+    padding: 4em 0.5em;
+
+    #container__Principal {
+        display: grid;
+        grid-template-areas: "area1" "area2" "area3" "area4" "area5";
+        gap: 20px;
+        max-width: 1380px;
+
+        .estilos__textos {
+            position: relative;
+            background-color: $branco-cor;
+            padding: 2em;
+            font-family: $font-family;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 8px;
+            height: fit-content;
+
+            #simbolo {
+                z-index: 1;
+                position: absolute;
+                top: 0px;
+                right: 20px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .container__Perfil {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: 2px solid hsl(0, 0%, 100%,20%);
+                }
+
+                .nome__perfil {
+                    font-size: 0.9em;
+                    font-weight: $weight-600;
+                    color: $branco-cor;
+                }
+
+                .descricao__perfil {
+                    color: hsl(0,0%,100%,50%);
+                    font-weight: $weight-500;
+                    font-size: 0.7em;
+                }
+            }
+
+            .container__Titulo {
+                z-index: 2;
+                color: $branco-cor;
+                font-size: 1.4em;
+                font-weight: $weight-500;
+            }
+
+            .container__Descricao {
+                color: hsl(0,0%,100%, 70%);
+                line-height: 1.5em;
+            }
+
+        }
+
+        .estilos__textos:nth-child(1) {
+            grid-area: area1;
+            background-color: $primaria-violeta-moderado-cor;
+            
+        }
+
+        .estilos__textos:nth-child(2) {
+            grid-area: area2;
+            background-color: $primaria-azul-acinzentado-muito-escuro-cor;
+        }
+
+        .estilos__textos:nth-child(3) {
+            grid-area: area3;
+            .container__Perfil{
+                .nome__perfil{
+                    color: $primaria-enegrecido-muito-escuro-cor;
+                }
+                .descricao__perfil{
+                    color: hsl(219, 29%, 14%, 50%);
+                }
+            }
+            .container__Titulo {
+                color: $primaria-enegrecido-muito-escuro-cor;
+            }
+            .container__Descricao {
+                color: hsl(219, 29%, 14%, 50%);
+            }
+            
+        }
+
+        .estilos__textos:nth-child(4) {
+            grid-area: area4;
+            background-color: $primaria-enegrecido-muito-escuro-cor;
+            .container__Perfil{
+                img{
+                    border: 2px solid hsl(263, 55%, 52%, 80%);
+                }
+            }
+        }
+
+        .estilos__textos:nth-child(5) {
+            grid-area: area5;
+            .container__Perfil{
+                .nome__perfil{
+                    color: $primaria-enegrecido-muito-escuro-cor;
+                }
+                .descricao__perfil{
+                    color: hsl(219, 29%, 14%, 50%);
+                }
+            }
+            .container__Titulo {
+                color: $primaria-enegrecido-muito-escuro-cor;
+            }
+            .container__Descricao {
+                color: hsl(219, 29%, 14%, 50%);
+            }
+        }
+    }
+}
+
+@media (width >= 768px){
+    main{
+        padding: 1em 3em;
+        #container__Principal{
+            width: 100%;
+            grid-template-areas: 
+            "area1 area2" "area1 area3" "area4 area5" "area4 area5";
+
+            .estilos__textos {
+                background-color: $branco-cor;
+                padding: 2em;
+                font-family: $font-family;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                border-radius: 20px;
+                height: 100%;
+                box-shadow: 5px 10px 100px rgba(0, 0, 0, 0.399);
+                
+                #simbolo {
+                    right: 20px;
+                }
+                .container__Perfil {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+    
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+    
+                    .nome__perfil {
+                        font-size: 1.1em;
+                    }
+    
+                    .descricao__perfil {
+                        font-size: 0.9em;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (width >= 1024px){
+    main{
+        padding: 5em 2em;
+        #container__Principal{
+            width: 100%;
+            grid-template-areas: 
+            "area1 area1 area2 area5" 
+            "area3 area4 area4 area5"; 
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            .estilos__textos {
+                height: 100%;
+                #simbolo {
+                    right: 100px;
+                }
+            }
+        }
+    }
+}
